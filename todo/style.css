@@ -1,0 +1,43 @@
+   body{
+    background-color: grey;
+   }
+   
+   .todos-container{
+    width:40%;
+    background-color: #3cb878;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  ul{
+    list-style-type: none;
+  }
+
+  li{
+     display: flex;
+    justify-content: flex-start;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  input{
+    width: 70%;
+  }
+
+  .del,.tick{
+    background-color: #3cb878;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .ln-through{
+    text-decoration: line-through;
+  }
+
+  
