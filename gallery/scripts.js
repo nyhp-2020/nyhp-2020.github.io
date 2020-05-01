@@ -45,15 +45,6 @@ imagesData.forEach((item, index) => {
         ${index}"><div class="title">${item.title}</div><img src="${item.photo}" ></div>`);
 });
 
-function loadPicture(num) {
-    $('#photo').attr('src', imagesData[num].photo);
-    $("#photo-title").text(imagesData[num].title);
-    $("#photo-description").text(imagesData[num].description);
-    //selectThumbnail
-    $("div.thumbnail").css("border-color", "grey");
-    $("div.thumbnail").eq(num).css("border-color", "#de6f4e");
-}
-
 $('#photo').attr('width', "100%");
 $('#photo').attr('height', "100%");
 
@@ -81,10 +72,27 @@ $("#rb").on('click', function () {
 
 //thumbnails
 $('.thumbnail-container').click((event) => {
+    currentPhoto = parseInt($(event.target)
+        .parent()
+        .attr("data-index"));
+    loadPicture(currentPhoto);
+});
+
+function loadPicture(num) {
+    $('#photo').attr('src', imagesData[num].photo);
+    $("#photo-title").text(imagesData[num].title);
+    $("#photo-description").text(imagesData[num].description);
+    //selectThumbnail
+    $("div.thumbnail").css("border-color", "grey");
+    $("div.thumbnail").eq(num).css("border-color", "#de6f4e");
+}
+
+//thumbnails
+/* $('.thumbnail-container').click((event) => {
     loadPicture(currentPhoto = parseInt($(event.target)
         .parent()
         .attr("data-index")));
-});
+}); */
 
 /* imagesData.forEach((item, index) => {
     alert($('.thumbnail-container')
